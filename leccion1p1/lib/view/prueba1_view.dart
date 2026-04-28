@@ -13,7 +13,7 @@ class Label extends StatelessWidget{
           fontWeight: FontWeight.bold),);
 }
 
-//number field
+// number field
 class NumberField extends StatelessWidget{
   final TextEditingController controller;
   final String hint;
@@ -46,24 +46,6 @@ class PrimaryButton extends StatelessWidget{
   );
 }
 
-// 2. Molecula
-class TripleInput extends StatelessWidget{
-  final TextEditingController a, b, c;
-
-  TripleInput({super.key, required this.a, required this.b, required this.c});
-  @override
-  Widget build(BuildContext context) =>
-      Row(
-        children: [
-          Expanded(child: NumberField(controller: a, hint: 'Valor A')),
-          SizedBox(width: 10,),
-          Expanded(child: NumberField(controller: b, hint: 'Valor B')),
-          SizedBox(width: 10,),
-          Expanded(child: NumberField(controller: c, hint: 'Valoc C')),
-          SizedBox(width: 10,),
-        ],
-      );
-}
 
 //3. Organismo
 class AnalisisCard extends StatefulWidget{
@@ -91,17 +73,19 @@ class _AnalisisCardState extends State<AnalisisCard>{
       margin: EdgeInsets.symmetric(vertical: 10),
       child: Padding(
         padding: EdgeInsets.all(15),
-        child: Column(
-          children: [
-            Label('Ingrese 100 numeros naturales separados por comas: '),
-            SizedBox(height: 10,),
-            NumberField(controller: _input, hint: 'Ej: 1,2,3,...'),
-            SizedBox(height: 10,),
-            PrimaryButton(text: 'Calcular', onPressed: _calcular,),
-            SizedBox(height: 10,),
-            Label(_resultado),
-            Text(_resultado),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Label('Ingrese 100 numeros naturales separados por comas: '),
+              SizedBox(height: 10,),
+              NumberField(controller: _input, hint: 'Ej: 1,2,3,...'),
+              SizedBox(height: 10,),
+              PrimaryButton(text: 'Calcular', onPressed: _calcular,),
+              SizedBox(height: 10,),
+              Label(_resultado),
+              Text(_resultado),
+            ],
+          ),
         ),
       ),
     );

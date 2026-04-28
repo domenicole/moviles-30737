@@ -27,7 +27,8 @@ class NumberController {
         Promedio: ${resultado.promedio}
         ''';
     } catch (e) {
-      return "Ingrese valores validos separados por comas";
+      return "Ingrese valores validos (numeros naturales) separados por comas";
     }
   }
+
 }
