@@ -13,10 +13,8 @@ class PedidoCafeModel {
     required this.tamanio,
     required this.cantidad,
   });
-
   // SUBTOTAL
   double calcularSubtotal() {
-
     double precioProducto =
     CafeController.obtenerPrecioProducto(producto);
 
@@ -27,14 +25,13 @@ class PedidoCafeModel {
 
     return precioFinal * cantidad;
   }
-
   // IVA
   double calcularIva() {
     return calcularSubtotal() * 0.15;
   }
-
   // TOTAL
   double calcularTotal() {
     return calcularSubtotal() + calcularIva();
   }
+
 }
